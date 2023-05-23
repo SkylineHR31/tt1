@@ -1,24 +1,31 @@
+import { Container, Grid } from '@mui/material';
 import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+
+import SearchField from './components/SearchField/SearchField';
+import SortPanel from './components/SortPanel/SortPanel';
+import CategoryFilter from './components/CategoryFilter/CategoryFilter';
+import PriceFilter from './components/PriceFilter/PriceFilter';
+import ProductsList from './components/ProductsList/ProductsList';
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <Container maxWidth="lg">
+        <Grid container spacing={2}>
+          <Grid md={12}>
+            <SearchField />
+            <SortPanel />
+          </Grid>
+          <Grid md={3}>
+            <CategoryFilter />
+            <PriceFilter />
+          </Grid>
+          <Grid md={9}>
+            <ProductsList />
+          </Grid>
+        </Grid>
+      </Container>
+
     </div>
   );
 }
